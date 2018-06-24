@@ -1,4 +1,4 @@
-var a1 = document.getElementById('a1');
+/*var a1 = document.getElementById('a1');
 var aud1 = document.getElementById('aud1');
 a1.addEventListener('mouseover',(event)=>{
     
@@ -44,4 +44,20 @@ a4.addEventListener('mouseover',(event)=>{
 a4.addEventListener('mouseout',function(event) {
     console.log("ss");
     aud4.pause();
-});
+});*/
+
+
+var links = document.querySelectorAll("div a");
+var audios = document.querySelectorAll("div audio");
+
+for(let i = 0; i<links.length;i++){
+    links[i].addEventListener('mouseover',(event)=>{
+        event.preventDefault();
+        audios[i].play();
+    });
+    
+    links[i].addEventListener('mouseout',function(event) {
+        event.preventDefault();
+        audios[i].pause();
+    });
+}
